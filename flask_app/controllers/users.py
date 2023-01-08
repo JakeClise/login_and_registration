@@ -53,3 +53,7 @@ def logout():
     session.clear()
     return redirect('/')
 
+@app.route('/cat')
+def cat():
+    return render_template('cat.html')
+
