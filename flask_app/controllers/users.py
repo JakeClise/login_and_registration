@@ -10,7 +10,12 @@ def login_reqister():
 
 @app.route('/dash')
 def home():
-    return render_template('home.html')
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        'id': session['user_id']
+    }
+    return render_template('home.html', user = User.get_by_id(data))
 
 @app.route('/register', methods = ["POST"])
 def register():
@@ -42,4 +47,9 @@ def login():
         return redirect('/')
     session['user_id'] = user_in_db.id
     return redirect('/dash')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
 

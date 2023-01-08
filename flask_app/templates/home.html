@@ -7,7 +7,14 @@
     <title>Login and Registration</title>
 </head>
 <body class="bg-dark text-light">
-    <h1>Hey!!!!!</h1>
+    <div class="container-fluid d-flex justify-content-between p-3">
+        <h1>Hey {{user.first_name}}</h1>
+        <a href="/logout" class="btn btn-primary">Logout</a>
+    </div>
+    <div class="content">
+        <h3 class="text-center">Welcome to the application, use the logout button to return to the home page. Thanks for stopping by!</h3>
+    </div>
+
 
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -50,3 +50,10 @@ class User:
         if len(result) < 1:
             return False
         return cls(result[0])
+    
+    @classmethod
+    def get_by_id(cls, data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL('login_and_registration').query_db(query, data)
+        return cls(results[0])
+        
